@@ -1,19 +1,18 @@
 {% extends "layout.html" %}
 {% block body %}
-<h2>Hi there</h2>
 
 {% for row in list_notes %}
-<div class="col">
+<div class="col mt-4">
     <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
 
-  <td>{{row[0]}}</td>
-  <td>{{row[1]}}</td>
-  <td>{{row[2]}}</td>
-  <td>{{row[3]}}</td>
-  <td width="130">
-    <a href="/edit/{{row[0]}}" class="btn btn-secondary btn-sm">edit</a>
-    <a href="/delete/{{row[0]}}" class="btn btn-danger btn-delete btn-sm">delete</a>
-  </td>
+        <div class="card-body">
+            <h5 class="card-title">{{row[1]}}</h5>
+            <p class="card-text">{{row[2]}}</p>
+          </div>
+          <div class="card-footer">
+            <a href="/edit/{{row[0]}}" class="btn btn-secondary btn-sm"><i class="fas fa-edit"></i></a>
+            <a href="/delete/{{row[0]}}" class="btn btn-danger btn-delete btn-sm"><i class="fas fa-trash"></i></a>
+          </div>
 </div>
 </div>
 {% endfor %}
